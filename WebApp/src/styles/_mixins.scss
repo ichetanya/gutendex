@@ -1,0 +1,12 @@
+@import './variables';
+
+@mixin heading {
+    color: $blue;
+    font-family: $monsterrat;
+    font-weight: $semi-bold;
+}
+
+@mixin monsterrat-regular {
+    font-family: $monsterrat;
+    font-weight: $regular;
+}
