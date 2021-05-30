@@ -1,0 +1,121 @@
+@import 'src/styles/variables.scss';
+.page-header{
+    margin: 1% 12% 0;
+    .back-genre{
+        display: flex;
+        .back-icon{
+            margin: 3px 4px 0px;
+            margin: 2px 4px 0px 0px;
+            cursor: pointer;
+            img{
+                height: 19px;
+                width: 25px;
+                position: relative;
+                top: 3px;
+            }
+        }
+        .genre-heading{
+            width: 95%;
+        }
+    }
+    .search-box{
+        .wrapper {
+            position: relative;
+            display: flex;
+            min-width: 100px;
+            .search-icon {
+                position: absolute;
+                top: 6px;
+                left: 8px;
+                width: 14px;
+            }
+            .search {
+                border: 1px solid grey;
+                border-radius: 5px;
+                width: 100%;
+                padding: 2px 23px 2px 30px;
+                outline: 0;
+                border: none;
+                background-color: $light-grey;
+                &::-webkit-search-cancel-button{
+                    -webkit-appearance: none;
+                    height: 1em;
+                    width: 1em;
+                    border-radius: 50em;
+                    background: url('../../assets/images/Cancel.svg') no-repeat 50% 50%;
+                    background-size: contain;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+                &:focus{
+                    border: 1.5px solid $blue;
+                    &::placeholder{
+                        color: transparent;
+                    }
+                    &::-webkit-search-cancel-button{
+                        opacity: 1;     
+                    }        
+                }
+              }
+            .clear-icon {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                width: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.page-body{
+    background-color: $ghost-white;
+    margin: 15px auto;
+    justify-content: space-between;
+    .page-body-content{
+        margin: 0px 8%;
+        .book-card{
+            margin: 12px 52px;
+            max-width: 120px;
+            cursor: pointer;
+            .book-cover{
+                width: 114px;
+                .book-img{
+                img{
+                    height: 162px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 5px 0 rgba(211,209,238,0.5);
+                    width: 100%;
+                }
+                }
+            }
+            .book-name{
+                width: 100px;
+                margin-bottom: 0px;
+            }
+          }
+    }
+  
+}
+
+@media only screen and (max-width: 600px) {
+    .page-header{
+        margin: 3% 1% 0;
+    }
+    .page-body {
+        justify-content: center;
+        .page-body-content{
+            margin: 0;
+            .book-card {
+                margin: 6px;
+                max-width: 99px;
+                .book-cover{
+                    width: 100px;
+                    .book-img img {
+                        height: 156px;
+                    }
+                }
+            }
+        }
+    }
+    
+}

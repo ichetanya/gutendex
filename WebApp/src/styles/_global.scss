@@ -1,6 +1,10 @@
 @import './mixins';
 
-*{
+::ng-deep *{
+    margin: 0;
+    padding: 0;
+}
+body{
     @include monsterrat-regular;
     font-size: 16px;
     color: $black;
@@ -20,6 +24,10 @@ h2{
     @include monsterrat-regular;
     font-size: 20px;
     color: $black;
+    height: 50px;
+    padding: 0px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(211,209,238,0.5);
 }
 
 .search-box{

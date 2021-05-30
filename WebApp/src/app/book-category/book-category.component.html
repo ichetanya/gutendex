@@ -1,1 +1,21 @@
-<p>book-category works!</p>
+<div class="container-fluid no-gutters "> 
+    <div class="page-header">
+       <div class="header-text">
+            <h1>Gutenberg Project</h1>
+            <p class="sub-heading">A social category website that allows you to freely search its database of books,annotations and reviews.</p>
+       </div>
+    </div>
+    <div class="page-body row rows-col-2 ">
+        <div class="genre-card col-6 w-sm-100" *ngFor="let genre of genreList" (click)="searchGenre(genre.category)">
+            <div class="genre-icon">
+                <img src="../../assets/images/{{genre.icon}}" [alt]="genre.category">
+            </div>
+            <div class="genre-title">
+                {{genre.category}}
+            </div>
+            <div class="genre-arrow">
+                <img src="../../assets/images/Next.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>

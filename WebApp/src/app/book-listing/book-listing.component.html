@@ -1,1 +1,36 @@
-<p>book-listing works!</p>
+<div class="container-fluid" >
+    <div class="page-header">
+        <div class="back-genre">
+            <div class="back-icon" (click)="goBack()"> 
+                <img src="../../assets/images/back.svg" alt="Back">
+            </div>
+            <h2 class="genre-heading">{{genre}}</h2>
+        </div>
+        <div class="search-box" >
+            <div class="wrapper">
+                <img class="search-icon" src="../../assets/images/Search.svg" />
+                <input class="search" placeholder="Search" type="search"  (keydown.enter)="searchBooks($event.target.value)">
+              </div> 
+        </div>
+    </div>
+    <div class="page-body">
+       <div class="page-body-content">
+            <div class="row rows-col-5" infiniteScroll (scrolled)="loadMore()" infinite-scroll-parent="true" >
+                <div class="book-card col" *ngFor="let book of bookArray">
+                    <div class="book-cover" (click)="openBook(book.id)">
+                        <div class="book-img">
+                            <img  *ngIf="book?.formats['image/jpeg']" [src]="book?.formats['image/jpeg']" [alt]="book?.title">
+                            <img *ngIf="!book?.formats['image/jpeg']" src="../../assets/images/book-cover.jpg" [alt]="book?.title">
+                        </div>
+                    </div>
+                    <p class="book-name">
+                        {{book?.title}}
+                    </p>
+                    <p class="book-author">
+                        {{book?.authors[0]?.name}}
+                    </p>
+                </div>
+            </div>
+       </div>
+    </div>
+</div>

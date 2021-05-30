@@ -7,14 +7,14 @@ const routes: Routes = [
   {
     path : '',
     pathMatch:'full',
-    redirectTo:'searchFlight'
+    redirectTo:'category'
   },
   {
     path : 'category',
     component: BookCategoryComponent
   },
   {
-    path : 'search',
+    path : 'search/:genre',
     component: BookListingComponent
   }
 ];
